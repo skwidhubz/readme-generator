@@ -14,33 +14,38 @@ inquirer
         {
             type: 'input',
             message: 'question?',
-            name: 'q'
+            name: 'question1'
         },
         {
             type: 'input',
             message: 'question?',
-            name: 'q'
+            name: 'question2'
         },
     ])
 
   .then((response) => {
-//    var responseData = response;
+   var readMeData = ` 
+   # Read Me File
+   
+   ## Contains a ${response.question1}
+   ` 
 
-   console.log(response);
+   console.log(response.question1);
+   console.log(response.question2);
 
     // var readMeData = `halp me ${responseData}`; 
 
-    // writeToFile(readMeData);
+    writeToFile(readMeData);
   }
   );
 
 // TODO: Create a function to write README file
-// function writeToFile(incomingData) {
+function writeToFile(incomingData) {
     
-//     fs.writeFile('README.md', incomingData, (err) =>
-//     err ? console.error(err) : console.log('Success!')
-//     );
-}
+    fs.writeFile('README.md', incomingData, (err) =>
+    err ? console.error(err) : console.log('Success!')
+    )
+}};
 
 // Function call to initialize app
 init();
