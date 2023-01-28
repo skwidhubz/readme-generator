@@ -15,25 +15,32 @@ inquirer
             type: 'input',
             message: 'question?',
             name: 'q'
-        }
+        },
+        {
+            type: 'input',
+            message: 'question?',
+            name: 'q'
+        },
     ])
 
   .then((response) => {
-   var responseData = response;
+//    var responseData = response;
 
-    var readMeData = `halp me ${responseData}`; 
+   console.log(response);
 
-    writeToFile(readMeData);
+    // var readMeData = `halp me ${responseData}`; 
+
+    // writeToFile(readMeData);
   }
   );
 
 // TODO: Create a function to write README file
-function writeToFile(incomingData) {
+// function writeToFile(incomingData) {
     
-    fs.writeFile('README.md', incomingData, (err) =>
-    err ? console.error(err) : console.log('Success!')
-    );
-}}
+//     fs.writeFile('README.md', incomingData, (err) =>
+//     err ? console.error(err) : console.log('Success!')
+//     );
+}
 
 // Function call to initialize app
 init();
