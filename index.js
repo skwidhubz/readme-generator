@@ -53,25 +53,29 @@ inquirer
     ])
 
   .then((response) => {
-    var readMeData = response;
     // var lisenceData = response.lisence
     console.log('now write to file..');
-    writeToFile(readMeData);
+    var responseText = `text is ${response} ok`
+
+    fs.writeFile('README.MD', responseText, (err) =>
+    err ? console.error(err) : console.log("Success!"))
+    
+    // writeToFile(readMeData);
     // return lisenceData;
   }
   );
 
 // TODO: Create a function to write README file
-function writeToFile(readMeData) {
+// function writeToFile(readMeData) {
     
-  fs.writeFile('README.MD', generateMarkdown(readMeData), (err) =>
-  err ? console.error(err) : console.log("Success!"))}};
+//   fs.writeFile('README.MD', generateMarkdown(readMeData), (err) =>
+//   err ? console.error(err) : console.log("Success!"))}};
 
-  function generateMarkdown(data) {
-    `# ${data} 
-    ## this read me is shite`
-    ;}
-  
+  // function generateMarkdown(response) {
+  //   `# ${response} 
+  //   ## this read me is shite`
+  //   ;}
+}
 
 // Function call to initialize app
 innitBruv()

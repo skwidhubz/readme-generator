@@ -1,1 +1,1 @@
-hello
+text is [object Undefined] ok
