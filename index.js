@@ -1,51 +1,79 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer'); //adding Inquirer package for prompt
-
 const fs = require('fs'); // enable FS from nodeJS
-
-
+// const generateMarkdown = require('./generateMarkdown'); // importing readme gen template file
 
 // TODO: Create a function to initialize app
-function init() {
+function innitBruv() {
 
 inquirer
   .prompt([
 // TODO: Create an array of questions for user input
         {
             type: 'input',
-            message: 'question?',
-            name: 'question1'
+            message: 'What is your gitHub user name?',
+            name: 'username'
         },
-        {
-            type: 'input',
-            message: 'question?',
-            name: 'question2'
-        },
+        // {
+        //     type: 'input',
+        //     message: 'What is the title of this project?',
+        //     name: 'main_title'
+        // },
+        // {
+        //     type: 'input',
+        //     message: 'What purpose does this project serve for the user?',
+        //     name: 'purpose'
+        // },
+        // {
+        //     type: 'input',
+        //     message: 'Which people have worked on this project?',
+        //     name: 'team'
+        // },
+        // {
+        //     type: 'input',
+        //     message: 'What dependencies need to be installed for this project?',
+        //     name: 'question1'
+        // },
+        // {
+        //     type: 'input',
+        //     message: 'What is the command to run this project?',
+        //     name: 'question2'
+        // },
+        // {
+        //     type: 'input',
+        //     message: 'What is your contact e-mail address?',
+        //     name: 'email_address'
+        // },
+        // {
+        //     type: 'list',
+        //     message: 'Choose the lisence for this project',
+        //     name: 'lisence',
+        //     choices:  ['MIT', 'BSD3', 'LGPL', 'Apache', 'Other', 'None'],
+        // },
     ])
 
   .then((response) => {
-   var readMeData = ` 
-   # Read Me File
-   
-   ## Contains a ${response.question1}
-   ` 
-
-   console.log(response.question1);
-   console.log(response.question2);
-
-    // var readMeData = `halp me ${responseData}`; 
-
+    var readMeData = response;
+    // var lisenceData = response.lisence
+    console.log('now write to file..');
     writeToFile(readMeData);
+    // return lisenceData;
   }
   );
 
 // TODO: Create a function to write README file
-function writeToFile(incomingData) {
+function writeToFile(readMeData) {
     
-    fs.writeFile('README.md', incomingData, (err) =>
-    err ? console.error(err) : console.log('Success!')
-    )
-}};
+  fs.writeFile('README.MD', generateMarkdown(readMeData), (err) =>
+  err ? console.error(err) : console.log("Success!"))}};
+
+  function generateMarkdown(data) {
+    `# ${data} 
+    ## this read me is shite`
+    ;}
+  
 
 // Function call to initialize app
-init();
+innitBruv()
+
+
