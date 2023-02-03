@@ -12,14 +12,14 @@ return `
 # ${answers.title}
 ${renderBadge(answers.license)}          
 ## Table of Contents                      
-- [Project description](#Description)
-- [Installation](#Installation)
-- [Usage](#Usage)
-- [License](#License)
-- [Command](#Command)
-- [Contributors](#Contributors)
-- [Tests](#Tests)
-- [Questions](#Questions)
+- [Project description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Command](#command)
+- [Contributors](#contributors)
+- [Tests](#tests)
+- [Questions](#questions)
 ## Description
 ${answers.description}
 ## Usage
