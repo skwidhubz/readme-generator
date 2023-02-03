@@ -7,11 +7,11 @@ function renderBadge(license) {
 }
 
 // markdown file generator
-function generateMarkdown(answers) {
+function generateMarkdown(answers) {            // table of contents links are not working
 return `
 # ${answers.title}
-${renderBadge(answers.license)}
-## Table of Contents
+${renderBadge(answers.license)}          
+## Table of Contents                      
 - [Project description](#Description)
 - [Installation](#Installation)
 - [Usage](#Usage)

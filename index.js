@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer'); //adding Inquirer package for prompt
 const fs = require('fs'); // enable FS from nodeJS
-const generateMarkdown = require('./generateMarkdown'); // importing readme gen template file
+const generateMarkdown = require('./utils/generateMarkdown'); // importing readme gen template file
 
 
 
