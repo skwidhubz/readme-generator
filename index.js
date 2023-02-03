@@ -6,7 +6,7 @@ const generateMarkdown = require('./generateMarkdown'); // importing readme gen 
 
 
 
-generateMarkdown();
+// generateMarkdown();
 
     // TODO: Create an array of questions for user input
 const QUESTIONS =  [
