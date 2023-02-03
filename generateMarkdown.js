@@ -1,41 +1,44 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-// function renderLicenseBadge(license) {
-  
-// }
-
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-// function renderLicenseLink(license) {}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(dataLicense) {
-  if(dataLicense === true){
-    console.log('license');
-  } else {console.log('no license')}
-};
 
 
+function renderBadge(license) {
+  if (license !== 'None') {
+      return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
+  }
+  return '';
+}
 
-// ReadME Generator Function with content
-function generateMarkdown(data) {
-  `# ${data} 
-  ## this read me is shite`
-  ;}
+function generateMarkdown(answers) {
+return `
+# ${answers.title}
+${renderBadge(answers.license)}
+## Table of Contents
+- [Project description](#Description)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [License](#License)
+- [Command Execution](#Command Execution)
+- [Contributing](#Contributing)
+- [Tests](#Tests)
+- [Questions](#Questions)
+## Description
+${answers.description}
+## Usage
+${answers.usage}
+## Installation
+${answers.installation}
+## Command Execution
+${answers.command}
+## Contributing
+${answers.team}
+## Tests
+${answers.testing}
+## Questions
+- Find me on Github: (https://github.com/${answers.github})
+- For any questions, email me at: ${answers.email}
+## License
+${answers.license}
+`
+}
 
 
-
-module.exports = generateMarkdown, renderLicenseSection;
-
-
-
-
-// var readMeData = ` 
-// # Read Me File
-
-// ## Contains a ${response.question1}
-// ` 
-
-// console.log(response.question1);
-// console.log(response.question2);
+module.exports = generateMarkdown
