@@ -1,7 +1,7 @@
 // function to generate lisence icon
 function renderBadge(license) {
   if (license !== 'None') {
-      return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`
+      return `![GitHub license](https://img.shields.io/badge/license-${license}-blue)`
   }
   return '';
 }
@@ -14,7 +14,6 @@ ${renderBadge(answers.license)}
 ## Table of Contents                      
 - [Project description](#description)
 - [Installation](#installation)
-- [Usage](#usage)
 - [License](#license)
 - [Command](#command)
 - [Contributors](#contributors)
@@ -22,8 +21,6 @@ ${renderBadge(answers.license)}
 - [Questions](#questions)
 ## Description
 ${answers.description}
-## Usage
-${answers.usage}
 ## Installation
 The dependencies required for this project are: ${answers.installation}
 ## Command
